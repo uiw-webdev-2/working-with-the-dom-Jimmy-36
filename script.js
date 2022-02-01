@@ -4,21 +4,33 @@
  * @link https://developer.mozilla.org/en-US/docs/Web/API/Element/querySelectorAll
  */
 
-import Backpack from "./Backpack.js";
+import Phone from "./Phone.js";
 
-const everydayPack = new Backpack(
+const everydayPhone = new Phone(
+  "Black",
+  "iphone i6",
+  8,
+  "Jim's iphone",
+  false,
+  "phone.jpg"
 );
 
 const content = `
      <figure class="backpack__image">
-       <img src= alt="" />
+       <img src=${everydayPhone.image} alt="picture of iphone" />
      </figure>
-     <h1 class="backpack__name"></h1>
+     <h1 class="backpack__name${everydayPhone.model}"></h1>
      <ul class="backpack__features">
      </ul>
+      <li>Color: ${everydayPhone.color}</li>
+      <li>iPhone Model:  ${everydayPhone.model}</li>
+      <li>Battery Life: ${everydayPhone.batteryLife}</li>
+      <li>Name: ${everydayPhone.name}</li>
+      <li>Phone off or on?: ${everydayPhone.phoneOn}</li>
    </article>
  `;
 
+ //this is the part where you work with the DOM
 const main = document.querySelector(".maincontent");
 
 
